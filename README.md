@@ -7,4 +7,6 @@ All exercises in this repo were created by [Trey Hunner](https://treyhunner.com/
 
 2018 September 17-23: [count_words](https://mutterberg.github.io/python_morsels/count_words)
 
+2018 September 24-30: [compact](https://mutterberg.github.io/python_morsels/compact)
+
 [Return to my #100DaysOfCode project home](https://mutterberg.github.io)
