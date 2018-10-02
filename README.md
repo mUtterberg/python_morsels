@@ -9,4 +9,6 @@ All exercises in this repo were created by [Trey Hunner](https://treyhunner.com/
 
 2018 September 24-30: [compact](https://mutterberg.github.io/python_morsels/compact)
 
+2018 October 1-7: [add](https://mutterberg.github.io/python_morsels/add)
+
 [Return to my #100DaysOfCode project home](https://mutterberg.github.io)
