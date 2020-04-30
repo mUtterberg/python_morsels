@@ -1,6 +1,6 @@
 # count_words
 
-[Public repo with my work](https://github.com/mUtterberg/python_morsels/tree/master/count_words/) for Python Morsels exercise September 17-23, 2018: count_words
+[Public repo with my work](https://github.com/mUtterberg/python_morsels/tree/master/count_words/) for Python Morsels "count_words" exercise, received September 17, 2018.
 
 This exercise was created by [Trey Hunner](https://treyhunner.com/) for [Python Morsels](https://try.pythonmorsels.com).
 

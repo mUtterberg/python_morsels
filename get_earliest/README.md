@@ -1,5 +1,6 @@
 # get_earliest
-[Public repo with my work](https://github.com/mUtterberg/python_morsels/tree/master/get_earliest/) for Python Morsels exercise September 10-16, 2018: get_earliest
+
+[Public repo with my work](https://github.com/mUtterberg/python_morsels/tree/master/get_earliest/) for Python Morsels "get_earliest" exercise, received September 10, 2018.
 
 This exercise was created by [Trey Hunner](https://treyhunner.com/) for [Python Morsels](https://try.pythonmorsels.com/).
 
