@@ -1,5 +1,6 @@
 # Circle
-[Public repo with my work](https://github.com/mUtterberg/python_morsels/tree/master/circle/) for Python Morsels exercise April 29, 2020: Circle
+
+[Public repo with my work](https://github.com/mUtterberg/python_morsels/tree/master/circle/) for Python Morsels "Circle" exercise, received April 29, 2020.
 
 This exercise was created by [Trey Hunner](https://treyhunner.com/) for [Python Morsels](https://try.pythonmorsels.com/).
 

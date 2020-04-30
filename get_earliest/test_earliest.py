@@ -39,17 +39,17 @@ class GetEarliestTests(unittest.TestCase):
         self.assertEqual(get_earliest(newer, older), older)
 
     # To test the Bonus part of this exercise, comment out the following line
-    @unittest.expectedFailure
-    def test_many_dates(self):
-        d1 = "01/24/2007"
-        d2 = "01/21/2008"
-        d3 = "02/29/2009"
-        d4 = "02/30/2006"
-        d5 = "02/28/2006"
-        d6 = "02/29/2006"
-        self.assertEqual(get_earliest(d1, d2, d3), d1)
-        self.assertEqual(get_earliest(d1, d2, d3, d4), d4)
-        self.assertEqual(get_earliest(d1, d2, d3, d4, d5, d6), d5)
+    # @unittest.expectedFailure
+    # def test_many_dates(self):
+    #     d1 = "01/24/2007"
+    #     d2 = "01/21/2008"
+    #     d3 = "02/29/2009"
+    #     d4 = "02/30/2006"
+    #     d5 = "02/28/2006"
+    #     d6 = "02/29/2006"
+    #     self.assertEqual(get_earliest(d1, d2, d3), d1)
+    #     self.assertEqual(get_earliest(d1, d2, d3, d4), d4)
+    #     self.assertEqual(get_earliest(d1, d2, d3, d4, d5, d6), d5)
 
 
 if __name__ == "__main__":
