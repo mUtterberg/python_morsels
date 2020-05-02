@@ -1,5 +1,6 @@
 # compact
-[Public repo with my work](https://github.com/mUtterberg/python_morsels/tree/master/compact/) for Python Morsels exercise September 24-30, 2018: compact
+
+[Public repo with my work](https://github.com/mUtterberg/python_morsels/tree/master/compact/) for Python Morsels "compact" exercise, received September 24, 2018.
 
 This exercise was created by [Trey Hunner](https://treyhunner.com/) for [Python Morsels](https://try.pythonmorsels.com/).
 

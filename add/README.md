@@ -1,6 +1,6 @@
 # add
 
-[Public repo with my work](https://github.com/mUtterberg/python_morsels/tree/master/add) for Python Morsels exercise October 1-7, 2018: add
+[Public repo with my work](https://github.com/mUtterberg/python_morsels/tree/master/add) for Python Morsels "add" exercise, received October 1, 2018.
 
 This exercise was created by [Trey Hunner](https://treyhunner.com/) for [Python Morsels](https://try.pythonmorsels.com/).
 
