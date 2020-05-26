@@ -1,20 +1,13 @@
+from unicodedata import normalize
 
 
 def is_anagram(str_1, str_2):
-    str_1 = str_1.lower()
-    str_2 = str_2.lower()
-    for letter in str_1:
-        if letter in str_2:
-            letter_index = str_2.find(letter)
-            if letter_index == 0:
-                str_2 = str_2[letter_index+1:]
-            elif letter_index < len(str_2):
-                str_2 = str_2[:letter_index] + str_2[letter_index+1:]
-            else:
-                str_2 = str_2[:letter_index]
-        else:
+    str_1 = normalize('NFD', str_1.lower())
+    str_2 = normalize('NFD', str_2.lower())
+    for letter in ''.join(x for x in (str_1+str_2).replace(' ', '') if x.isalpha()):
+        str_1_count = str_1.count(letter)
+        str_2_count = str_2.count(letter)
+        if str_1_count != str_2_count:
             return False
-    if len(str_2) > 0:
-        return False
 
     return True
