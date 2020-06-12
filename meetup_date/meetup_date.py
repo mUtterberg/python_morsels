@@ -1,7 +1,8 @@
 import datetime
+from enum import Enum
 
 
-class Weekday:
+class Weekday(Enum):
     MONDAY = 0
     TUESDAY = 1
     WEDNESDAY = 2
