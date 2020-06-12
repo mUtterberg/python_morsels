@@ -1,6 +1,16 @@
 import datetime
 
 
+class Weekday:
+    MONDAY = 0
+    TUESDAY = 1
+    WEDNESDAY = 2
+    THURSDAY = 3
+    FRIDAY = 4
+    SATURDAY = 5
+    SUNDAY = 6
+
+
 def meetup_date(year, month, nth=4, weekday=3):
     if nth < 0:
         border_date = datetime.date(year, month+1, 1) - datetime.timedelta(days=1)
