@@ -2,5 +2,8 @@
 
 def parse_ranges(in_str):
     ranges = in_str.split(',')
-    out_str = [z for x in ranges for z in range(int(x.split('-')[0].strip()),int(x.split('-')[1].strip())+1)]
-    return out_str
+    for x in ranges:
+        start_range = int(x.split('-')[0].strip())
+        end_range = int(x.split('-')[-1].strip())+1
+        for z in range(start_range,end_range):
+            yield z
