@@ -1,18 +1,17 @@
 
 
 def uniques_only(num_iter):
-    try:
-        current = hash(num_iter)
-        return (
-            x
-            for x in dict.fromkeys(current)
-        )
-    except TypeError as type_e:
-        nums_used = []
-        for x in num_iter:
-            if x not in nums_used:
-                nums_used.append(x)
-                yield x
+    seen_hashable = set()
+    seen_unhashable = []
+    for item in num_iter:
+        try:
+            if item not in seen_hashable:
+                yield item
+                seen_hashable.add(item)
+        except TypeError:
+            if item not in seen_unhashable:
+                yield item
+                seen_unhashable.append(item)
 
 
 if __name__ == "__main__":
