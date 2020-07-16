@@ -1,6 +1,6 @@
-# Deep Add
+# Float Range
 
-[Public repo with my work](https://github.com/mUtterberg/python_morsels/tree/master/deep_add/) for Python Morsels "Deep Add" exercise, received July 6, 2020.
+[Public repo with my work](https://github.com/mUtterberg/python_morsels/tree/master/float_range/) for Python Morsels "float_range" exercise, received July 13, 2020.
 
 This exercise was created by [Trey Hunner](https://treyhunner.com/) for [Python Morsels](https://try.pythonmorsels.com/).
 
