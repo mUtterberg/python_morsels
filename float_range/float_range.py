@@ -19,21 +19,21 @@ class float_range:
         for x in range(len(self)):
             yield self.get_element(len(self) - x - 1)
 
-    def __eq__(self, value):
+    def __eq__(self, value) -> bool:
         try:
-            same_length = (len(self) == len(value))
-            same_start = (self.start == value.start)
+            same_length = len(self) == len(value)
+            same_start = self.start == value.start
             if same_length:
                 if not len(self):
                     return True
                 elif (len(self) == 1) and same_start:
                     return True
-            same_step = (self.step == value.step)
+            same_step = self.step == value.step
             return same_length and same_start and same_step
         except TypeError:
-            return value == self
+            return NotImplemented
     
-    def __len__(self):
+    def __len__(self) -> int:
         length = (self.stop - self.start) / self.step
         if length < 0:
             return 0
@@ -41,11 +41,11 @@ class float_range:
             return int(length) + 1
         return int(length)
 
-    def __iter__(self):
+    def __iter__(self) -> float:
         for x in range(len(self)):
             yield self.get_element(x)
 
-    def __next__(self):
+    def __next__(self) -> float:
         current = self.current
         if self.pos and (current < self.stop):
             self.current += self.step
