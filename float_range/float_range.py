@@ -1,8 +1,5 @@
 
 
-from typing import Type
-
-
 class float_range:
 
     def __init__(self, input_start, input_end=None, input_step=1) -> None:
@@ -11,36 +8,52 @@ class float_range:
             input_start = 0
         self.start = input_start
         self.current = input_start
-        self.end = input_end
+        self.stop = input_end
         self.step = input_step
         self.pos = bool(input_step > 0)
-        # self.data = iter([])
+    
+    def get_element(self, ix: int) -> float:
+        return self.start + self.step * ix
 
+    def __reversed__(self):
+        for x in range(len(self)):
+            yield self.get_element(len(self) - x - 1)
+
+    def __eq__(self, value):
+        try:
+            same_length = (len(self) == len(value))
+            same_start = (self.start == value.start)
+            if same_length:
+                if not len(self):
+                    return True
+                elif (len(self) == 1) and same_start:
+                    return True
+            same_step = (self.step == value.step)
+            return same_length and same_start and same_step
+        except TypeError:
+            return value == self
+    
     def __len__(self):
-        length = (self.end - self.start) // self.step
-        if length >= 0:
-            return length
-        return -length
+        length = (self.stop - self.start) / self.step
+        if length < 0:
+            return 0
+        if length % 1 > 0:
+            return int(length) + 1
+        return int(length)
 
     def __iter__(self):
-        return self
+        for x in range(len(self)):
+            yield self.get_element(x)
 
     def __next__(self):
         current = self.current
-        if self.pos and (current < self.end):
+        if self.pos and (current < self.stop):
             self.current += self.step
             return current
-        if (not self.pos) and (current > self.end):
+        if (not self.pos) and (current > self.stop):
             self.current += self.step
             return current
         raise StopIteration
-
-    def __reversed__(self):
-        start = self.end
-        self.end = self.start
-        self.start = start
-        self.step = -self.step
-        self.pos = -self.pos
 
 
 if __name__ == "__main__":
