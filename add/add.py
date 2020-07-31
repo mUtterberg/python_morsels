@@ -5,7 +5,6 @@ def add(*matrices):
         raise ValueError('Given matrices are not the same size.')
     for rows in zip(*matrices):
         if len(set(len(row) for row in rows)) != 1:
-            print('len(set(len(row) for row in rows)) returns', set(len(row) for row in rows))
             raise ValueError('Given matrices are not the same size.')
     return [
         [sum(vals) for vals in zip(*rows)]
