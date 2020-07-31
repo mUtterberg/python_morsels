@@ -4,6 +4,32 @@
 
 All exercises in this repo were created by [Trey Hunner](https://treyhunner.com/) for [Python Morsels](https://try.pythonmorsels.com/).
 
+2020 July 27: [csv_columns](https://mutterberg.github.io/python_morsels/csv_columns)
+
+2020 July 20: [Sum Timestamps](https://mutterberg.github.io/python_morsels/sum_timestamps)
+
+2020 July 13: [Float Range](https://mutterberg.github.io/python_morsels/float_range)
+
+2020 July 6: [deep_add](https://mutterberg.github.io/python_morsels/deep_add)
+
+2020 June 29: [Uniques Only](https://mutterberg.github.io/python_morsels/uniques_only)
+
+2020 June 22: [Is Perfect Square](https://mutterberg.github.io/python_morsels/is_perfect_square)
+
+2020 June 15: [EasyDict](https://mutterberg.github.io/python_morsels/EasyDict)
+
+2020 June 8: [Meetup Date](https://mutterberg.github.io/python_morsels/meetup_date)
+
+2020 June 1: [Parse Ranges](https://mutterberg.github.io/python_morsels/parse_ranges)
+
+2020 May 25: [is_anagram](https://mutterberg.github.io/python_morsels/is_anagram)
+
+2020 May 18: [Point](https://mutterberg.github.io/python_morsels/point)
+
+2020 May 11: [Tail](https://mutterberg.github.io/python_morsels/tail)
+
+2020 May 4: [Fix CSV](https://mutterberg.github.io/python_morsels/fix_csv)
+
 2020 April 29: [Circle](https://mutterberg.github.io/python_morsels/circle)
 
 2018 October 1: [add](https://mutterberg.github.io/python_morsels/add)
