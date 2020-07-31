@@ -4,6 +4,8 @@
 
 All exercises in this repo were created by [Trey Hunner](https://treyhunner.com/) for [Python Morsels](https://try.pythonmorsels.com/).
 
+## 2020 (14+)
+
 2020 July 27: [csv_columns](https://mutterberg.github.io/python_morsels/csv_columns)
 
 2020 July 20: [Sum Timestamps](https://mutterberg.github.io/python_morsels/sum_timestamps)
@@ -31,6 +33,8 @@ All exercises in this repo were created by [Trey Hunner](https://treyhunner.com/
 2020 May 4: [Fix CSV](https://mutterberg.github.io/python_morsels/fix_csv)
 
 2020 April 29: [Circle](https://mutterberg.github.io/python_morsels/circle)
+
+## 2018 (4)
 
 2018 October 1: [add](https://mutterberg.github.io/python_morsels/add)
 
