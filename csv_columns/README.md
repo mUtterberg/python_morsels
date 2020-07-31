@@ -2,8 +2,6 @@
 
 [Public repo with my work](https://github.com/mUtterberg/python_morsels/tree/master/csv_columns/) for Python Morsels "csv_columns" exercise, received July 27, 2020.
 
-<iframe src="https://github.com/mUtterberg/python_morsels/blob/master/csv_columns/csv_columns.py"></iframe>
-
 This exercise was created by [Trey Hunner](https://treyhunner.com/) for [Python Morsels](https://try.pythonmorsels.com/).
 
 [Return to my Python Morsels](https://mutterberg.github.io/python_morsels)
