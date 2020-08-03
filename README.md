@@ -6,6 +6,8 @@ All exercises in this repo were created by [Trey Hunner](https://treyhunner.com/
 
 ## 2020 (14+)
 
+2020 August 3: [interleave](https://mutterberg.github.io/python_morsels/interleave)
+
 2020 July 27: [csv_columns](https://mutterberg.github.io/python_morsels/csv_columns)
 
 2020 July 20: [Sum Timestamps](https://mutterberg.github.io/python_morsels/sum_timestamps)
