@@ -1,11 +1,14 @@
 import datetime
+from typing import Any
 
 
 class Month:
+
+    __slots__ = ('month', 'year', 'first_day', 'last_day')
     def __init__(self, year: int, month: int) -> None:
-        self.month = month
-        self.year = year
-        self.first_day = datetime.date(year, month, 1)
+        super(Month, self).__setattr__('month', month)
+        super(Month, self).__setattr__('year', year)
+        super(Month, self).__setattr__('first_day', datetime.date(year, month, 1))
         if month in [1, 3, 5, 7, 8, 10, 12]:
             last_day = 31
         elif month in [4, 6, 9, 11]:
@@ -15,27 +18,29 @@ class Month:
         else:
             raise ValueError
         try:
-            self.last_day = datetime.date(year, month, last_day)
+            super(Month, self).__setattr__('last_day', datetime.date(year, month, last_day))
         except ValueError:
-            self.last_day = datetime.date(year, month, last_day-1)
+            super(Month, self).__setattr__('last_day', datetime.date(year, month, last_day-1))
 
     @classmethod
     def from_date(cls, in_date):
+        """Create Month from datetime.date"""
         out_month = cls(in_date.year, in_date.month)
         return out_month
 
+    def __setattr__(self, name: str, value: Any) -> None:
+        """Make immutable"""
+        raise AttributeError("Months cannot be modified")
+
+    def __delattr__(self, name: str) -> None:
+        """Make immutable"""
+        raise AttributeError("Months cannot be modified")
+
+    def __hash__(self) -> int:
+        return hash((self.year, self.month))
+
     def strftime(self, str_format: str):
         start_pos = 0
-        # out_str = ''
-        # while start_pos < len(str_format):
-        #     fmt_pos = str_format.find('%', start_pos)
-        #     start_pos = fmt_pos + 1
-        #     format_val = str_format[start_pos]
-        #     if format_val in ['Y', 'y', 'm', 'b', 'B']:
-        #         next_component = self.first_day.strftime(f'%{format_val}')
-        #     else:
-        #         next_component = ''
-        #     out_str = out_str + str_format[start_pos+1:] + next_component
         fmt_pos = str_format.find('%', start_pos)
         start_pos = fmt_pos + 1
         fmt_one = str_format[start_pos]
