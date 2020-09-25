@@ -4,9 +4,10 @@ from itertools import zip_longest
 def interleave(*iterables):
     """Zip input iterables"""
 
-    for items in zip_longest(*iterables, fillvalue='OBSCURE_FILLED_CONST'):
+    sentinel = object()
+    for items in zip_longest(*iterables, fillvalue=sentinel):
         for item in items:
-            if item != 'OBSCURE_FILLED_CONST':
+            if item is not sentinel:
                 yield item
 
 
