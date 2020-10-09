@@ -1,4 +1,4 @@
-def format_fixed_width(in_list, widths=None) -> str:
+def format_fixed_width(in_list, padding=2, widths=None) -> str:
     """Formats a list of lists as a fixed-width formatted string"""
     if not in_list:
         return ''
@@ -9,9 +9,10 @@ def format_fixed_width(in_list, widths=None) -> str:
             for i in range(max([len(nested_list) for nested_list in in_list]))
         ]
 
+    pad = ' ' * padding
     return '\n'.join(
         [
-            '  '.join(
+            pad.join(
                 [
                     item.ljust(widths[i], ' ') for i, item in enumerate(nested_list)
                 ]
