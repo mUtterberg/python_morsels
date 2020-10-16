@@ -20,13 +20,9 @@ def validate_tag_and_strip(is_tag: str) -> Dict[str, str]:
 
 def tags_equal(html_a: str, html_b: str) -> bool:
     """Compare html opening tags"""
-    equal = True
     tag_a = validate_tag_and_strip(html_a)
     tag_b = validate_tag_and_strip(html_b)
-    for a, b in zip(sorted(tag_a), sorted(tag_b)):
-        print(a, tag_a[a], b, tag_b[b])
-        if (a != b) or (tag_a[a] != tag_b[b]):
-            equal = False
+    equal = tag_a == tag_b
     return equal
 
 
