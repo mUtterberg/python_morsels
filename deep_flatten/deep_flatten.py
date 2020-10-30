@@ -5,9 +5,7 @@ def deep_flatten(flatten_me: Iterable) -> Iterator:
     """Flatten an iterable"""
 
     for item in flatten_me:
-        if isinstance(item, (str, bytes)):
-            yield item
-        elif isinstance(item, Iterable):
+        if isinstance(item, Iterable) and not isinstance(item, (str, bytes)):
             for inner in deep_flatten(item):
                 yield inner
         else:
