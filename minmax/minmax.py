@@ -24,12 +24,10 @@ def minmax(in_obj: Iterable, *, key: Callable = None) -> MinMax:
         trans_obj = key(obj) if key else obj
 
         if trans_obj < trans_min:
-            trans_min = trans_obj
-            min_obj = obj
+            trans_min, min_obj = trans_obj, obj
 
         if trans_obj > trans_max:
-            trans_max = trans_obj
-            max_obj = obj
+            trans_max, max_obj = trans_obj, obj
 
     return MinMax(min_obj, max_obj)
 
