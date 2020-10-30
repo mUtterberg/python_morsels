@@ -7,11 +7,10 @@ def deep_flatten(flatten_me: Iterable) -> Iterator:
     for item in flatten_me:
         if isinstance(item, str):
             yield item
-            continue
-        try:
+        elif isinstance(item, Iterable):
             for inner in deep_flatten(item):
                 yield inner
-        except TypeError:
+        else:
             yield item
 
 
