@@ -18,7 +18,7 @@ class OrderedSet:
         return len(self.data)
 
     def __repr__(self) -> str:
-        return f'OrderedSet({list(self.data.keys())})'
+        return f'OrderedSet({list(self.data)})'
 
     def __contains__(self, item: Any) -> bool:
         try:
