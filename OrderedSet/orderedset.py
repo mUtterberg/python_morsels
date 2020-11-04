@@ -1,14 +1,15 @@
 from collections import OrderedDict
-from typing import Any, Iterable
+from collections.abc import MutableSet
+from typing import Any, Iterable, TypeVar
+
+_T = TypeVar('_T')
 
 
-class OrderedSet:
+class OrderedSet(MutableSet):
     """Like a set, but ordered!"""
 
-    def __init__(self, iter_in: Iterable = None) -> None:
-        if iter_in is None:
-            iter_in = []
-        self.data = OrderedDict.fromkeys(iter_in)
+    def __init__(self, iter_in: Iterable = ()) -> None:
+        self.data = OrderedDict.fromkeys(iter_in, None)
 
     def __iter__(self) -> Iterable:
         for item in self.data:
@@ -33,17 +34,19 @@ class OrderedSet:
         except AttributeError:
             return o == set(self.data)
 
-    def add(self, item: Any) -> None:
+    def add(self, value: _T) -> None:
         """Add unique data to self.data"""
-        self.data.setdefault(item)
+        self.data.setdefault(value)
 
-    def discard(self, item: Any) -> None:
+    def discard(self, value: _T) -> None:
         """Remove data from self.data"""
-        self.data.pop(item, None)
+        self.data.pop(value, None)
 
 
 if __name__ == "__main__":
-    TEST_ITER = ['these', 'words', 'are', 'in', 'an', 'order']
+    TEST_ITER = []
+    print(*OrderedSet(TEST_ITER))
+    TEST_ITER += ['these', 'words', 'are', 'in', 'an', 'order']
     print(*OrderedSet(TEST_ITER))
 
     print(OrderedSet('abc') == OrderedSet('bac'))
