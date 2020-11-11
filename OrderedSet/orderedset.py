@@ -12,14 +12,13 @@ class OrderedSet(MutableSet):
         self.data = OrderedDict.fromkeys(iter_in, None)
 
     def __iter__(self) -> Iterable:
-        for item in self.data:
-            yield item
+        return iter(self.data)
 
     def __len__(self) -> int:
         return len(self.data)
 
     def __repr__(self) -> str:
-        return f'OrderedSet({list(self.data)})'
+        return f'{type(self).__name__}({list(self.data)})'
 
     def __contains__(self, item: Any) -> bool:
         try:
@@ -32,7 +31,8 @@ class OrderedSet(MutableSet):
         try:
             return self.data == o.data
         except AttributeError:
-            return o == set(self.data)
+            return super().__eq__(o)
+            # return o == set(self.data)
 
     def add(self, value: _T) -> None:
         """Add unique data to self.data"""
