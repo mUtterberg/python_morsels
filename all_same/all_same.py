@@ -4,15 +4,11 @@ from typing import Sequence
 def all_same(in_seq: Sequence) -> bool:
     """Determine if all elements are the same"""
 
-    in_seq = iter(in_seq)
-    try:
-        comp = next(in_seq)
-    except StopIteration:
-        return True
-    for item in in_seq:
-        if item != comp:
-            return False
-    return True
+    comp = next(iter(in_seq), None)
+    return all(
+        item == comp
+        for item in in_seq
+    )
 
 
 def print_test(in_seq: Sequence) -> None:
