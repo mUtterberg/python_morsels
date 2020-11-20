@@ -1,63 +1,59 @@
 import argparse
 import csv
-from pathlib import Path
-from typing import IO, Any, List, Tuple, Union
+from argparse import FileType
+from typing import IO, Generator, Iterable, List, Tuple
 
 
-def parse_fixed_width_file(in_stream: IO, start_end: List[Tuple[int, ...]]) -> List[List[Any]]:
+def parse_fixed_width_file(in_stream: IO, start_end: Iterable[Tuple[int, ...]]) -> Generator[List[str], None, None]:
     """Turn fixed-width file into a CSV file"""
 
-    rows = in_stream.readlines()
-
-    return [
+    return (
         [
-            row[slice(*slicer)].strip()
+            row[slice(*slicer)].rstrip()
             for slicer in start_end
         ]
-        for row in rows
-    ]
+        for row in in_stream
+    )
 
 
-def parse_columns(column_pairs: str) -> List[Tuple[int, ...]]:
+def parse_columns(column_pairs: str) -> List[Tuple[int, int]]:
     """Detect start_end from string format"""
-    return [
-        tuple(int(x) for x in pair.split(':'))
+    pairs = (
+        pair.split(':')
         for pair in column_pairs.split(',')
-    ]
+    )
+    return [
+        (int(start), int(stop))
+        for (start, stop) in pairs
+        ]
 
 
-def main(cli_args: Union[argparse.Namespace, List[str]]) -> None:
+def parse_args(cli_args: List[str]):
+    """Parse CLI args"""
+    parser = argparse.ArgumentParser()
+    parser.add_argument('txt_file', type=FileType('rt'))
+    parser.add_argument('csv_file', type=FileType('wt'))
+    parser.add_argument('--cols', type=str, required=True)
+    arguments, _ = parser.parse_known_args(cli_args)
+    return arguments
+
+
+def main(cli_args: List[str]) -> None:
     """Write CSV based on arguments"""
 
-    txt_file = None
-    if isinstance(cli_args, argparse.Namespace):
-        cols = cli_args.cols
-        txt_file = cli_args.txt_file
-        csv_file = cli_args.csv_file
-    else:
-        for arg in cli_args:
-            if arg.startswith('--cols='):
-                cols = arg[7:]
-            elif txt_file is None:
-                txt_file = arg
-            else:
-                csv_file = arg
+    if not isinstance(cli_args, argparse.Namespace):
+        cli_args = parse_args(cli_args)
+
+    cols = cli_args.cols
+    txt_file = cli_args.txt_file
+    csv_file = cli_args.csv_file
 
     start_end = parse_columns(cols)
-    with open(txt_file, 'r') as in_stream:
-        file_data = parse_fixed_width_file(in_stream, start_end)
+    file_data = parse_fixed_width_file(txt_file, start_end)
 
-    out_file = Path(csv_file)
-    out_file.touch(exist_ok=True)
-    with out_file.open('w') as out_stream:
-        writer = csv.writer(out_stream)
-        writer.writerows(file_data)
+    writer = csv.writer(csv_file)
+    writer.writerows(file_data)
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument('txt_file', type=str)
-    parser.add_argument('csv_file', type=str)
-    parser.add_argument('--cols', type=str, required=True)
-    arguments, _ = parser.parse_known_args()
-    main(arguments)
+    pass
