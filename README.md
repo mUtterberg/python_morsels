@@ -4,7 +4,39 @@
 
 All exercises in this repo were created by [Trey Hunner](https://treyhunner.com/) for [Python Morsels](https://try.pythonmorsels.com/).
 
-## 2020 (14+)
+## 2020 (32+)
+
+2020 November 30: [pluck](https://mutterberg.github.io/python_morsels/pluck)
+
+2020 November 23: [CyclicList](https://mutterberg.github.io/python_morsels/CyclicList)
+
+2020 November 16: [fixed2csv](https://mutterberg.github.io/python_morsels/fixed2csv)
+
+2020 November 9: [all_same](https://mutterberg.github.io/python_morsels/all_same)
+
+2020 November 2: [OrderedSet](https://mutterberg.github.io/python_morsels/OrderedSet)
+
+2020 October 26: [deep_flatten](https://mutterberg.github.io/python_morsels/deep_flatten)
+
+2020 October 19: [minmax](https://mutterberg.github.io/python_morsels/minmax)
+
+2020 October 12: [tags_equal](https://mutterberg.github.io/python_morsels/tags_equal)
+
+2020 October 5: [format_fixed_width](https://mutterberg.github.io/python_morsels/format_fixed_width)
+
+2020 September 28: [reformat_diary](https://mutterberg.github.io/python_morsels/reformat_diary)
+
+2020 September 21: [interleave (part 2)](https://mutterberg.github.io/python_morsels/interleave_part_2)
+
+2020 September 14: [suppress](https://mutterberg.github.io/python_morsels/suppress)
+
+2020 September 7: [chunked](https://mutterberg.github.io/python_morsels/chunked)
+
+2020 August 31: [window](https://mutterberg.github.io/python_morsels/window)
+
+2020 August 24: [format_ranges](https://mutterberg.github.io/python_morsels/format_ranges)
+
+2020 August 17: [ProxyDict](https://mutterberg.github.io/python_morsels/ProxyDict)
 
 2020 August 10: [month](https://mutterberg.github.io/python_morsels/month)
 
