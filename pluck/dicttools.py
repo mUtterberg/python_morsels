@@ -1,17 +1,29 @@
-from typing import Any, Dict
+from typing import Any, Dict, Tuple
 
 
 SENTINEL = object()
 
 
-def pluck(nested_dict: Dict[Any, Dict[Any, Any]], pd_path: str, *args, sep: str = '.', default: Any = SENTINEL) -> Any:
+def pluck(
+        nested_dict: Dict[Any, Dict[Any, Any]],
+        *key_paths: Tuple[str],
+        sep: str = '.',
+        default: Any = SENTINEL
+    ) -> Any:
     """A helper for working with nested dict-based data"""
-    if args:
+
+    if len(key_paths) > 1:
         return tuple(
-            pluck(nested_dict, keys, sep=sep, default=default) for keys in [pd_path, *args]
+            pluck(nested_dict, keys, sep=sep, default=default) for keys in key_paths
         )
-    keys = pd_path.split(sep)
+
+    try:
+        keys = key_paths[0].split(sep)
+    except IndexError:
+        raise ValueError(f'Missing positional argument "key_path(s)"')
+
     working_val = nested_dict.copy()
+
     for key in keys:
         try:
             working_val = working_val[key]
