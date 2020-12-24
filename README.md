@@ -6,6 +6,12 @@ All exercises in this repo were created by [Trey Hunner](https://treyhunner.com/
 
 ## 2020 (32+)
 
+2020 December 21: [Float Range (part 2)](https://mutterberg.github.io/python_morsels/float_range_part_2)
+
+2020 December 14: [Window (part 2)](https://mutterberg.github.io/python_morsels/window2)
+
+2020 December 7: [Record Calls](https://mutterberg.github.io/python_morsels/record_calls)
+
 2020 November 30: [pluck](https://mutterberg.github.io/python_morsels/pluck)
 
 2020 November 23: [CyclicList](https://mutterberg.github.io/python_morsels/CyclicList)
