@@ -3,15 +3,15 @@
 class float_range:
 
     def __init__(self, input_start, input_end=None, input_step=1) -> None:
-        if isinstance(input_end, type(None)):
-            input_end = input_start
+        if input_end is None:
             input_start = 0
+            input_end = input_start
         self.start = input_start
         self.current = input_start
         self.stop = input_end
         self.step = input_step
         self.pos = bool(input_step > 0)
-    
+
     def get_element(self, ix: int) -> float:
         return self.start + self.step * ix
 
@@ -32,7 +32,7 @@ class float_range:
             return same_length and same_start and same_step
         except TypeError:
             return NotImplemented
-    
+
     def __len__(self) -> int:
         length = (self.stop - self.start) / self.step
         if length < 0:
