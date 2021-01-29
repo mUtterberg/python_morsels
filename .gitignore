@@ -139,3 +139,4 @@ cython_debug/
 
 .vscode
 .DS_Store
+test_*.py

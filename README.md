@@ -4,7 +4,19 @@
 
 All exercises in this repo were created by [Trey Hunner](https://treyhunner.com/) for [Python Morsels](https://try.pythonmorsels.com/).
 
-## 2020 (32+)
+## 2020 (4+)
+
+2021 January 25: [sort_by_column](https://mutterberg.github.io/python_morsels/sort_by_column)
+
+2021 January 18: [minmax (part 2)](https://mutterberg.github.io/python_morsels/minmax_part_2)
+
+2021 January 11: [alias](https://mutterberg.github.io/python_morsels/alias)
+
+2021 January 4: [total_length](https://mutterberg.github.io/python_morsels/total_length)
+
+## 2020 (36)
+
+2020 December 28: [Vector](https://mutterberg.github.io/python_morsels/Vector)
 
 2020 December 21: [Float Range (part 2)](https://mutterberg.github.io/python_morsels/float_range_part_2)
 
