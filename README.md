@@ -4,7 +4,21 @@
 
 All exercises in this repo were created by [Trey Hunner](https://treyhunner.com/) for [Python Morsels](https://try.pythonmorsels.com/).
 
-## 2020 (4+)
+## 2021 (11+)
+
+2021 March 15: [unsmart.py](https://mutterberg.github.io/python_morsels/unsmart)
+
+2021 March 8: [markdownify](https://mutterberg.github.io/python_morsels/markdownify)
+
+2021 March 1: [ini2csv.py](https://mutterberg.github.io/python_morsels/ini2csv)
+
+2021 February 22: [flatten_dict](https://mutterberg.github.io/python_morsels/flatten_dict)
+
+2021 February 15: [FuzzyString](https://mutterberg.github.io/python_morsels/FuzzyString)
+
+2021 February 8: [PermaDict](https://mutterberg.github.io/python_morsels/PermaDict)
+
+2021 February 1: [loop_helper](https://mutterberg.github.io/python_morsels/loop_helper)
 
 2021 January 25: [sort_by_column](https://mutterberg.github.io/python_morsels/sort_by_column)
 
