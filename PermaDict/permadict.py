@@ -1,5 +1,5 @@
 from collections import UserDict
-from typing import Iterable, Mapping, Optional, Union
+from typing import Mapping, Optional
 
 
 SENTINEL = object()
@@ -8,10 +8,7 @@ SENTINEL = object()
 class PermaDict(UserDict):
     """A class has no function."""
 
-    # def __init__(self, __dict: Optional[Mapping] = None, *, silent: bool = False) -> None:
     def __init__(self, __dict: Optional[Mapping] = None, **kwargs) -> None:
-        # self.silent = silent
-        # self.force = force
         data = dict(kwargs)
 
         self.silent = data.pop('silent', False)
