@@ -6,6 +6,8 @@ All exercises in this repo were created by [Trey Hunner](https://treyhunner.com/
 
 ## 2021 (11+)
 
+2021 March 22: [condense_csv](https://mutterberg.github.io/python_morsels/condense_csv)
+
 2021 March 15: [unsmart.py](https://mutterberg.github.io/python_morsels/unsmart)
 
 2021 March 8: [markdownify](https://mutterberg.github.io/python_morsels/markdownify)
