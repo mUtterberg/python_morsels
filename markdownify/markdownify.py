@@ -6,10 +6,19 @@ class MarkdownifyParser(HTMLParser):
     """Wrap HTMLParser for desired behavior"""
 
     processed_text = ''
+    link_url = ''
 
     def handle_starttag(self, tag: str, attrs: List[Tuple[str, Optional[str]]]) -> None:
         if tag == 'br':
-            self.processed_text = self.processed_text.strip() + ' '
+            self.processed_text = self.processed_text.strip() + '  \n'
+        elif tag == 'strong':
+            self.processed_text += '**'
+        elif tag == 'a':
+            for attr in attrs:
+                if attr[0] == 'href':
+                    self.link_url = attr[-1]
+                    break
+            self.processed_text += '['
 
     def handle_data(self, data) -> None:
         self.processed_text += data.replace('\n', ' ')
@@ -17,6 +26,11 @@ class MarkdownifyParser(HTMLParser):
     def handle_endtag(self, tag: str) -> None:
         if tag == 'p':
             self.processed_text += '\n\n'
+        elif tag == 'strong':
+            self.processed_text += '**'
+        elif tag == 'a':
+            self.processed_text += f']({self.link_url})'
+            self.link_url = ''
 
     def consolidate_processed(self) -> None:
         """Whitespace normalization"""
@@ -38,12 +52,7 @@ def markdownify(html_str: str) -> str:
 
 def run_examples() -> None:
     """Run some examples!"""
-    html = (
-        '<p>A paragraph<br><br>' +
-        ' of text</p>' +
-        '<p>Another paragraph</p>'
-    )
-    print(markdownify(html))
+    print(markdownify('<a href="http://www.treyhunner.com">Trey</a> has a blog'))
 
 
 if __name__ == '__main__':
